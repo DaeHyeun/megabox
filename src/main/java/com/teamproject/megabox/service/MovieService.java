@@ -1,2 +1,4 @@
-package com.teamproject.megabox.service;public interface MovieService {
+package com.teamproject.megabox.service;
+
+public interface MovieService {
 }
