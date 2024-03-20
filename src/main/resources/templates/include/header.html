@@ -9,8 +9,8 @@
 <!-- //스킵 메뉴 -->
 <header id="pyo_header">
     <div class="pyo_container">
-        <div class="row">
-            <div class="header clearfix">
+        <div class="pyo_row">
+            <div class="pyo_header clearfix">
                 <h1>
                     <a href="#">
                         <em><img src="/img/logo.png" alt="MEGABOX"/></em>
@@ -19,9 +19,9 @@
                 </h1>
                 <nav id="pyo_mNav">
                     <h2 class="ir_so">메가박스 전체 메뉴</h2>
-                    <a href="#" class="ham"><span></span></a>
+                    <a href="#" class="pyo_ham"><span></span></a>
                 </nav>
-                <nav class="nav">
+                <nav class="pyo_nav">
                     <ul class="clearfix">
                         <li><a href="#">영화</a></li>
                         <li><a href="#">큐레이션</a></li>
@@ -29,50 +29,57 @@
                         <li><a href="#">특별관</a></li>
                         <li><a href="#">스토어</a></li>
                         <li><a href="#">이벤트</a></li>
-                        <li id="loginBtn"><a href="javascript:void(0);">로그인</a></li>
+                        <li id="loginBtn"><a href="/member/login">로그인</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </div>
-</header>
-<!--//header-->
-
-<!--모달창-->
-<div class="modal loginModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">로그인</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                    </div>
-                    <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+    <!--모달창-->
+    <div class="modal loginModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">로그인</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!--//모달창-->
+    <!--//모달창-->
+    <script>
+        $("#loginBtn").click(function(){
+            console.log("jdbfiiiwbifi");
+            $(".modal").modal('show');
+        })
+    </script>
+</header>
+<!--//header-->
+
+
 
 </html>
