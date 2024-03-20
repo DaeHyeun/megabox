@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <!-- 스킵 메뉴 -->
-<div id="skip">
+<div id="pyo_skip">
     <a rel="bookmark" href="#movie">최신 영화 소식</a>
     <a rel="bookmark" href="#event">새로운 이벤트</a>
     <a rel="bookmark" href="#new">새로운 영화</a>
 </div>
 <!-- //스킵 메뉴 -->
-<header id="header">
-    <div class="container">
+<header id="pyo_header">
+    <div class="pyo_container">
         <div class="row">
             <div class="header clearfix">
                 <h1>
@@ -17,7 +17,7 @@
                         <strong><img src="/img/logo-sub.png" alt="LIFE THEATER"/></strong>
                     </a>
                 </h1>
-                <nav id="mNav">
+                <nav id="pyo_mNav">
                     <h2 class="ir_so">메가박스 전체 메뉴</h2>
                     <a href="#" class="ham"><span></span></a>
                 </nav>
@@ -75,12 +75,4 @@
 </div>
 <!--//모달창-->
 
-<script>
-    $(document).ready(function(){
-        let loginBtn = document.querySelector("#loginBtn");
-        loginBtn.click(function(){
-            console.log("클릭!!!!!!!!!!!!!!!")
-        })
-    })
-</script>
 </html>
