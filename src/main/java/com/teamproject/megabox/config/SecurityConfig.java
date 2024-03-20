@@ -20,6 +20,13 @@ public class SecurityConfig {
     //시큐리티 필터 설정
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        //로그인
+        http.formLogin(login->login
+                .loginPage("/member/login")
+                .loginProcessingUrl("/loginProc")
+                .failureUrl("/member/login/error")
+        );
+
         http.csrf(cs-> cs.disable());
         return http.build();
     }
