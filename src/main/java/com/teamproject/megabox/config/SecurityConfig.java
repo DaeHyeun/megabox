@@ -22,10 +22,14 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         //로그인
         http.formLogin(login->login
-                .loginPage("/member/login")
                 .loginProcessingUrl("/loginProc")
+                .defaultSuccessUrl("/")
                 .failureUrl("/member/login/error")
         );
+
+        //로그아웃
+        http.logout((auth) -> auth.logoutUrl("/logout")
+                        .logoutSuccessUrl("/"));
 
         http.csrf(cs-> cs.disable());
         return http.build();
