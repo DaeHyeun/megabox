@@ -45,8 +45,8 @@
     });
 
     //영화 차트 탭 메뉴
-    var movBtn = $(".movie_title >ul >li");
-    var movCont = $(".movie_chart >div");
+    var movBtn = $(".pyo_movie_title >ul >li");
+    var movCont = $(".pyo_movie_chart >div");
 
     movCont.hide().eq(0).show();
 
@@ -62,7 +62,7 @@
     });
 
     //공지사항 탭 메뉴
-    var tabMenu = $(".notice");
+    var tabMenu = $(".pyo_notice");
 
     //컨텐츠 내용 숨기기
     tabMenu.find("ul > li > ul").hide();
