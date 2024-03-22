@@ -3,6 +3,31 @@
 <th:block th:replace="~{/layout/basic::setContent(~{this::content})}">
     <th:block th:fragment="content">
         <h2>영화 목록</h2>
+        <div class="swiper-slide">
+            <div class="poster">
+                <figure>
+                    <img src="/img/poster01.jpg" srcset="/img/poster01@2.jpg 2x" alt="침묵"/>
+                </figure>
+                <div class="rank"><strong>1</strong></div>
+                <div class="mx">
+                    <span class="icon m ir_pm">MX</span>
+                    <span class="icon b ir_pm">Boutique</span>
+                </div>
+            </div>
+            <div class="infor">
+                <h3><span class="icon all ir_pm">전체관람가</span><strong>침묵</strong></h3>
+                <div class="infor_btn">
+                    <a href="#">상세보기</a>
+                    <a href="#">예매하기</a>
+                </div>
+            </div>
+        </div>
+        <!--나중에 최신순 예율율 높은순 해서 5개씩 여러줄 만들예정-->
+        <!--이미지관련 크기조절 필요 슬라이드 할건기 아니면 카드형태 일반적인 페이징으로 할건지 고민-->
+        <!--영화 등록은 선생님이랑 같이한 프로젝트와 비슷하게 할 예정 -->
+        <!--컨트롤러 작업 요함-->
+        <!--리스트 뿌릴 전체틀 부트스트랩 찾아야함-->
+        <!--프로퍼티 create -> update해야함-->
     </th:block>
 </th:block>
 </html>
