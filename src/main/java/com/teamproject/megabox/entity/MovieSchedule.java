@@ -19,7 +19,7 @@ public class MovieSchedule {
     @Column(name = "movieSchedule_id")
     private Long id;
     private String startTime;
-    private String date;
+    private String movieDate;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "movie_id")
     private Movie movie;

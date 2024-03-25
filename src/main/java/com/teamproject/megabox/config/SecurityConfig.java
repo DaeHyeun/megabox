@@ -1,16 +1,22 @@
 package com.teamproject.megabox.config;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
+/*@RequiredArgsConstructor*/
 public class SecurityConfig {
+
+    /*private final UserDetailsService userDetailsService;*/
+
     //비밀번호 암호화
     @Bean
     public PasswordEncoder passwordEncoder(){
@@ -32,6 +38,13 @@ public class SecurityConfig {
                         .logoutSuccessUrl("/"));
 
         http.csrf(cs-> cs.disable());
+
+        /*//rememberMe 기능
+        http.rememberMe()
+                .rememberMeParameter("rememberMe")
+                .tokenValiditySeconds(604800)   //일주일동안 유지
+                .alwaysRemember(false);*/
+
         return http.build();
     }
 }

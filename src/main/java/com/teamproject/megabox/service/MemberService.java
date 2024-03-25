@@ -11,6 +11,12 @@ public interface MemberService {
     //이메일 중복 체크
     String validateMember(MemberDTO dto);
 
+    //이름이랑 전화번호로 이메일 찾기
+    String findEmail(String name, String pnumber);
+
+    //이름이랑 이메일로 회원 찾기
+    String findByEmailName(String email, String name);
+
     //디폴트
     //디티오를 엔티티로
     default Member dtoToEntity(MemberDTO dto){
