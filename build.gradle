@@ -46,7 +46,8 @@ dependencies {
 	annotationProcessor "jakarta.persistence:jakarta.persistence-api"
 	//썸네일
 	implementation group: 'net.coobird', name: 'thumbnailator', version: '0.4.1' /*thumbnailator*/
-
+	//이메일 보내주는 의존성 주입
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
 }
 
 tasks.named('test') {

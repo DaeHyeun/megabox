@@ -37,6 +37,29 @@ public class MemberServiceImpl implements MemberService, UserDetailsService {
         }
     }
 
+    //이름이랑 전화번호로 이메일 찾기
+    @Override
+    public String findEmail(String name, String pnumber) {
+        Member findMember = memberRepository.findByNamePnumber(name, pnumber);
+        if (findMember != null){
+            return findMember.getEmail();
+        }else{
+            return "fail";
+        }
+
+    }
+
+    @Override
+    public String findByEmailName(String email, String name) {
+        Member findMember = memberRepository.findByEmailName(email, name);
+        if (findMember != null){
+            return "ok";
+        }else{
+            return "fail";
+        }
+    }
+
+
     //스프링 시큐리티를 이용한 로그인을 위한 UserDetails를 리턴하는 메소드
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
