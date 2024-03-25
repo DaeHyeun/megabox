@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "saat")
+@Table(name = "seat")
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,7 +18,7 @@ public class Seat {
     private String id;                  //프라이머리키  ("관id_seatName")
     private String seatName;            //행 * 열 (a1)
     private String col;                 //열(숫자)
-    private String row;                 //행(영어)
+    private String line;                 //행(영어)
     private SellStatus sellStatus;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "theater_id")

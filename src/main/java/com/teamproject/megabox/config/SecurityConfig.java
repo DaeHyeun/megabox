@@ -20,13 +20,22 @@ public class SecurityConfig {
     //시큐리티 필터 설정
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        //페이지 권한 설정
+        http.authorizeHttpRequests((auth) -> auth
+                        .requestMatchers("/", "/member/**", "/item/**", "/images/**").permitAll()
+                        .requestMatchers("/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/js/**","/img/**","/css/**").permitAll() //정적필드허용
+                        .anyRequest().authenticated()
+        );
+
+
+
         //로그인
         http.formLogin(login->login
                 .loginProcessingUrl("/loginProc")
                 .defaultSuccessUrl("/")
                 .failureUrl("/member/login/error")
         );
-
         //로그아웃
         http.logout((auth) -> auth.logoutUrl("/logout")
                         .logoutSuccessUrl("/"));

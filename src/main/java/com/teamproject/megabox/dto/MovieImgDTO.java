@@ -18,6 +18,5 @@ public class MovieImgDTO {
     private String oriImgName;  //원본 이미지 이름
     private String imgUrl;      //이미지 저장될 경로
     private String repImgYn;    //대표이미지 여부
-    private List<MovieImgDTO> movieImgDTOList = new ArrayList<>();
-    private List<Long> itemImgIds = new ArrayList<>();
+
 }

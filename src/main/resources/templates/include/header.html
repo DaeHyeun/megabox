@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <!-- 스킵 메뉴 -->
 <div id="pyo_skip">
     <a rel="bookmark" href="#movie">최신 영화 소식</a>
@@ -12,7 +13,7 @@
         <div class="pyo_row">
             <div class="pyo_header clearfix">
                 <h1>
-                    <a href="#">
+                    <a href="/">
                         <em><img src="/img/logo.png" alt="MEGABOX"/></em>
                         <strong><img src="/img/logo-sub.png" alt="LIFE THEATER"/></strong>
                     </a>
@@ -23,10 +24,14 @@
                 </nav>
                 <nav class="pyo_nav">
                     <ul class="clearfix">
-                        <li><a href="#">영화</a></li>
-                        <li><a href="#">큐레이션</a></li>
+
+                        <th:block sec:authorize="hasAnyAuthority('ROLE_ADMIN')">
+                        <li><a href="/admin/movie/new">영화등록</a></li>
+                        </th:block>
+                        <li><a href="/admin/movielist">영화</a></li>
+                        <!--<li><a href="#">큐레이션</a></li>
                         <li><a href="#">영화관</a></li>
-                        <li><a href="#">특별관</a></li>
+                        <li><a href="#">특별관</a></li>-->
                         <li><a href="#">이벤트</a></li>
                         <li><a href="/member/join">회원가입</a></li>
                         <th:block sec:authorize="isAnonymous()">

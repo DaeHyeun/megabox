@@ -16,13 +16,13 @@ public class Review extends BaseEntity{
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "review_seq")
     @Column(name = "review_id")
     private Long id;
-    private String comment;         //코멘트
-    private double movieRating;     //별점
+    private String comments;             //코멘트
+    private int movieRating;             //별점
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "movie_id")
-    private Movie movie;            //다대일 관계
+    private Movie movie;                 //다대일 관계
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
-    private Member member;          //다대일 관계
+    private Member member;              //다대일 관계
 
 }

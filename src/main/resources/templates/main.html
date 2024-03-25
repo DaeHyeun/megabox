@@ -77,161 +77,32 @@
                                 <li><a href="#">큐레이션</a></li>
                             </ul>
                         </div>
+
+
                         <div class="pyo_movie_chart">
                             <div class="swiper-container2">
                                 <div class="chart_cont1 swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="poster">
-                                            <figure>
-                                                <img src="/img/poster01.jpg" srcset="/img/poster01@2.jpg 2x" alt="침묵"/>
-                                            </figure>
-                                            <div class="rank"><strong>1</strong></div>
-                                            <div class="mx">
-                                                <span class="icon m ir_pm">MX</span>
-                                                <span class="icon b ir_pm">Boutique</span>
+                                    <th:block th:each="dto, dtoStat :${result.dtoList}">
+                                        <div class="swiper-slide">
+                                            <div class="poster">
+                                                <figure>
+                                                    <img th:src="@{${dto.imgUrl}}" alt="침묵"/>
+                                                </figure>
+                                                <div class="rank"><strong>[[${dtoStat.count}]]</strong></div>
+                                                <div class="mx">
+                                                    <span class="icon m ir_pm">MX</span>
+                                                    <span class="icon b ir_pm">Boutique</span>
+                                                </div>
+                                            </div>
+                                            <div class="infor">
+                                                <h3><span class="icon all ir_pm">전체관람가</span><strong>[[${dto.title}]]</strong></h3>
+                                                <div class="infor_btn">
+                                                    <a href="#">상세보기</a>
+                                                    <a href="#">예매하기</a>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="infor">
-                                            <h3><span class="icon all ir_pm">전체관람가</span><strong>침묵</strong></h3>
-                                            <div class="infor_btn">
-                                                <a href="#">상세보기</a>
-                                                <a href="#">예매하기</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="poster">
-                                            <figure>
-                                                <img src="/img/poster02.jpg" srcset="/img/poster02@2.jpg 2x" alt=""/>
-                                            </figure>
-                                            <div class="rank"><strong>2</strong></div>
-                                            <div class="mx">
-                                                <span class="icon m ir_pm">MX</span>
-                                                <span class="icon b ir_pm">Boutique</span>
-                                            </div>
-                                        </div>
-                                        <div class="infor">
-                                            <h3><span class="icon a12 ir_pm">12세 관람가</span><strong>침묵</strong></h3>
-                                            <div class="infor_btn">
-                                                <a href="#">상세보기</a>
-                                                <a href="#">예매하기</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="poster">
-                                            <figure>
-                                                <img src="/img/poster03.jpg" srcset="/img/poster03@2.jpg 2x" alt=""/>
-                                            </figure>
-                                            <div class="rank"><strong>3</strong></div>
-                                            <div class="mx">
-                                                <span class="icon m ir_pm">MX</span>
-                                                <span class="icon b ir_pm">Boutique</span>
-                                            </div>
-                                        </div>
-                                        <div class="infor">
-                                            <h3><span class="icon a15 ir_pm">15세 관람가</span><strong>침묵</strong></h3>
-                                            <div class="infor_btn">
-                                                <a href="#">상세보기</a>
-                                                <a href="#">예매하기</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="poster">
-                                            <figure>
-                                                <img src="/img/poster04.jpg" srcset="/img/poster04@2.jpg 2x" alt=""/>
-                                            </figure>
-                                            <div class="rank"><strong>4</strong></div>
-                                            <div class="mx">
-                                                <span class="icon m ir_pm">MX</span>
-                                                <span class="icon b ir_pm">Boutique</span>
-                                            </div>
-                                        </div>
-                                        <div class="infor">
-                                            <h3><span class="icon a19 ir_pm">19세 관람가</span><strong>침묵</strong></h3>
-                                            <div class="infor_btn">
-                                                <a href="#">상세보기</a>
-                                                <a href="#">예매하기</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="poster">
-                                            <figure>
-                                                <img src="/img/poster01.jpg" srcset="/img/poster01@2.jpg 2x" alt="침묵"/>
-                                            </figure>
-                                            <div class="rank"><strong>1</strong></div>
-                                            <div class="mx">
-                                                <span class="icon m ir_pm">MX</span>
-                                                <span class="icon b ir_pm">Boutique</span>
-                                            </div>
-                                        </div>
-                                        <div class="infor">
-                                            <h3><span class="icon all ir_pm">전체관람가</span><strong>침묵</strong></h3>
-                                            <div class="infor_btn">
-                                                <a href="#">상세보기</a>
-                                                <a href="#">예매하기</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="poster">
-                                            <figure>
-                                                <img src="/img/poster02.jpg" srcset="/img/poster02@2.jpg 2x" alt=""/>
-                                            </figure>
-                                            <div class="rank"><strong>2</strong></div>
-                                            <div class="mx">
-                                                <span class="icon m ir_pm">MX</span>
-                                                <span class="icon b ir_pm">Boutique</span>
-                                            </div>
-                                        </div>
-                                        <div class="infor">
-                                            <h3><span class="icon a12 ir_pm">12세 관람가</span><strong>침묵</strong></h3>
-                                            <div class="infor_btn">
-                                                <a href="#">상세보기</a>
-                                                <a href="#">예매하기</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="poster">
-                                            <figure>
-                                                <img src="/img/poster03.jpg" srcset="/img/poster03@2.jpg 2x" alt=""/>
-                                            </figure>
-                                            <div class="rank"><strong>3</strong></div>
-                                            <div class="mx">
-                                                <span class="icon m ir_pm">MX</span>
-                                                <span class="icon b ir_pm">Boutique</span>
-                                            </div>
-                                        </div>
-                                        <div class="infor">
-                                            <h3><span class="icon a15 ir_pm">15세 관람가</span><strong>침묵</strong></h3>
-                                            <div class="infor_btn">
-                                                <a href="#">상세보기</a>
-                                                <a href="#">예매하기</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="poster">
-                                            <figure>
-                                                <img src="/img/poster04.jpg" srcset="/img/poster04@2.jpg 2x" alt=""/>
-                                            </figure>
-                                            <div class="rank"><strong>4</strong></div>
-                                            <div class="mx">
-                                                <span class="icon m ir_pm">MX</span>
-                                                <span class="icon b ir_pm">Boutique</span>
-                                            </div>
-                                        </div>
-                                        <div class="infor">
-                                            <h3><span class="icon a19 ir_pm">19세 관람가</span><strong>침묵</strong></h3>
-                                            <div class="infor_btn">
-                                                <a href="#">상세보기</a>
-                                                <a href="#">예매하기</a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </th:block>
                                 </div>
                             </div>
                             <!--//chart_cont1-->
