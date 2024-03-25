@@ -20,9 +20,9 @@ public class Review extends BaseEntity{
     private double movieRating;     //별점
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "movie_id")
-    private Movie movie;            //다대일 관계
+    private Movie movie;                 //다대일 관계
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
-    private Member member;          //다대일 관계
+    private Member member;              //다대일 관계
 
 }

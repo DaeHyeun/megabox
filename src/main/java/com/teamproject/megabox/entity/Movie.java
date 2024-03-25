@@ -1,6 +1,7 @@
 package com.teamproject.megabox.entity;
 
 import com.teamproject.megabox.constant.AgeRating;
+import com.teamproject.megabox.dto.MovieDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -32,6 +33,23 @@ public class Movie extends BaseEntity{
     @Lob//BLOB타입 매핑
     private String description;     //상세설명
     private String attendance;      //관람객수
+
+    //수정시 필드 초기화 해주는 작업
+    //setter OR Builder 사용 가능
+    public void updateMovie(MovieDTO dto){
+        this.title = dto.getTitle();
+        this.subTitle = dto.getSubTitle();
+        this.director = dto.getDirector();
+        this.actor = dto.getActor();
+        this.nation = dto.getNation();
+        this.genre = dto.getGenre();
+        this.duration = dto.getDuration();
+        this.releaseDate = dto.getReleaseDate();
+        this.ageRating = dto.getAgeRating();
+        this.description = dto.getDescription();
+    }
+
+
 
 
 }

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{/layout/basic::setContent(~{this::content})}">
+    <th:block th:fragment="content">
+        <h1>상영영화 상세보기 </h1>
+        <form  th:action="@{'/admin/movie'}" method="post" th:object="${movieDTO}"
+              enctype="multipart/form-data">
+            <input type="hidden" name="id" th:field="*{id}">
+            <div class="form-group">
+                <select th:field="*{ageRating}">
+                    <option value="G_RATED">전체관람가</option>
+                    <option value="PG12">12세관람가</option>
+                    <option value="PG15">15세관람가</option>
+                    <option value="X_RATED">청소년관람불가</option>
+                </select>
+            </div>
+            <!--제목-->
+            <div class="form-group">
+                제목 : <input type="text" required class="form-control" th:field="*{title}">
+            </div>
+            <!--서브타이틀-->
+            <div class="form-group">
+                서브 타이틀 : <input type="text" required class="form-control" th:field="*{subTitle}">
+            </div>
+            <!--감독-->
+            <div class="form-group">
+                감독 : <input type="text" required class="form-control" th:field="*{director}">
+            </div>
+            <!--배우-->
+            <div class="form-group">
+                배우 :
+                <textarea class="form-control" th:field="*{actor}"></textarea>
+            </div>
+            <!--국가-->
+            <div class="form-group">
+                촬영 국가 : <input type="text" required class="form-control" th:field="*{nation}">
+            </div>
+            <!--장르-->
+            <div class="form-group">
+                장르 : <input type="text" required class="form-control" th:field="*{genre}">
+            </div>
+            <!--상영시간-->
+            <div class="form-group">
+                상영시간 : <input type="text" required class="form-control" th:field="*{duration}">
+            </div>
+            <!--개봉일-->
+            <div class="form-group">
+                개봉일 : <input type="text" required class="form-control" th:field="*{releaseDate}">
+            </div>
+            <!--상세설명-->
+            <div class="form-group">
+                 영화 상세설명 :
+                <textarea class="form-control" th:field="*{description}"></textarea>
+            </div>
+            <!--이미지 등록-->
+            <!--등록된 이미지 인풋출력-->
+            <div class="form-group" th:each="movieImgDTO:${movieDTO.movieImgDTOList}">
+                <div class="custom-file img-div">
+                    <input type="file" name="movieImgFile" class="custom-file-input">
+                    <input type="hidden" name="movieImgIds" th:value="${movieImgDTO.id}">
+                    <label class="custom-file-label" th:text="${movieImgDTO.oriImgName}"></label>
+                </div>
+            </div>
+            <!--수정시 추가할 이미지 인풋 출력-->
+            <div class="form-group" th:each="num: ${#numbers.sequence(1, 5 - #lists.size(movieDTO.movieImgDTOList))}">
+                <div class="custom-file img-div">
+                    <input type="file" name="movieImgFile" class="custom-file-input">
+                    <input type="hidden" name="movieImgIds">
+                    <label class="custom-file-label" th:text="영화포스터+${num}"></label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">수정하기</button>
+        </form>
+    </th:block>
+</th:block>
+
+<script th:inline="javascript">
+    let errorMessage = [[${errorMessage}]];
+    if(errorMessage!=null){
+        alert(errorMessage);
+    }
+    $(".custom-file-input").on("change",function (){
+        let fileName = $(this).val().split("\\").pop(); //이미지 파일명
+        $(this).siblings(".custom-file-label").html(fileName);
+    })
+</script>
+</html>

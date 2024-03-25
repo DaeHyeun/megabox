@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{/layout/basic::setContent(~{this::content})}">
+    <th:block th:fragment="content">
+        <h1>상품관리페이지</h1>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">영화번호</th>
+                <th scope="col">제목</th>
+                <th scope="col">감독</th>
+                <th scope="col">장르</th>
+                <th scope="col">관람등급</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="dto:${result.dtoList}">
+                <td>[[${dto.id}]]</td>
+                <td><a th:href="@{'/admin/movie/' + ${dto.id}}">[[${dto.title}]]</a></td>
+                <td>[[${dto.director}]]</td>
+                <td>[[${dto.genre}]]</td>
+                <td>[[${dto.ageRating}]]</td>
+            </tr>
+            </tbody>
+        </table>
+        <ul class="pagination h-100 justify-content align-items-center">
+            <li class="page-item " th:if="${result.prev}">
+                <a class="page-link" th:href="@{/admin/movielist(page=${result.start - 1})}"
+                   tabindex="-1">Previous</a>
+            </li>
+            <li th:each="page:${result.pageList}"
+                th:class="'page-item '+${result.page==page? 'active':''}">
+                <a class="page-link" th:href="@{/admin/movielist(page=${page})}">
+                    [[${page}]]</a>
+            </li>
+            <li class="page-item" th:if="${result.next}">
+                <a class="page-link" th:href="@{/admin/movielist(page=${result.end+1})}" >
+                    Next</a>
+            </li>
+        </ul>
+    </th:block>
+</th:block>
+</html>

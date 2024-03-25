@@ -8,8 +8,14 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
 @Builder
 @Data
 @AllArgsConstructor
@@ -23,10 +29,18 @@ public class MovieDTO {
     private String nation;          //국가
     private String genre;           //장르
     private String duration;        //상영시간
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date releaseDate;       //개봉일
     @Enumerated(EnumType.STRING)
     private AgeRating ageRating;    //관람등급
     @Lob//BLOB타입 매핑
     private String description;     //상세설명
     private String attendance;      //관람객수
+    private List<MovieImgDTO> movieImgDTOList = new ArrayList<>();
+    private List<Long> movieImgIds = new ArrayList<>();
+
+
+
+
+
 }
