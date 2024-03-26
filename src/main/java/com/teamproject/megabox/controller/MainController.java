@@ -28,4 +28,13 @@ public class MainController {
         }
         return "main";
     }
+    @GetMapping("/support")
+    public String supportPage(){
+        return "support/supportmain";
+    }
+
+    @GetMapping("/ticketing")
+    public String ticketingPage(){
+        return "ticketing/screenList";
+    }
 }
